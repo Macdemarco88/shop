@@ -1,5 +1,13 @@
+.main-bg {
+  height: 300px;
+  background-image: url(https://i.pinimg.com/564x/ef/46/c1/ef46c191568edb6fddf8abf767d12362.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
 .App {
   text-align: center;
+  letter-spacing: -0.8px;
 }
 
 .App-logo {
@@ -35,4 +43,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+.nav-title {
+  margin-right: 0 !important;
+}
+.nav-container {
+  margin: 0 20px !important;
+}
+.me-auto a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: gray;
+  font-weight: 500;
 }

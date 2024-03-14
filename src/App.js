@@ -9,18 +9,35 @@ import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 function App() {
   // 레코드 데이터 가져옴
   let [records] = useState(data);
+  let navigate = useNavigate();
 
+  let sex = data.filter((d) => d.id >= 1);
+  console.log(sex);
   return (
     <div className="App">
       {/* 네브바 */}
       <Navbar bg="light" data-bs-theme="light">
         <Container className="nav-container">
-          <Navbar.Brand className="nav-title" href="#home">
-            AikoRecords
+          <Navbar.Brand>
+            <Link to="/" className="nav-title">
+              AikoRecords
+            </Link>
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Link to="/">Home</Link>
-            <Link to="/detail">Detail</Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/detail");
+              }}
+            >
+              Detail
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -28,6 +45,7 @@ function App() {
       <Routes>
         {/* 메인 배경화면 */}
         <Route
+          exact
           path="/"
           element={
             <div>
@@ -45,15 +63,24 @@ function App() {
           }
         />
         {/* 상세 페이지 */}
-        <Route
-          path="/detail"
-          element={
-            <div>
-              <Detail />
-            </div>
-          }
-        />
+        <Route path="/detail/:id" element={<Detail records={records} />} />
       </Routes>
+    </div>
+  );
+}
+function About() {
+  return (
+    <div>
+      <h4>어바웃타임요</h4>
+      <Outlet></Outlet>
+    </div>
+  );
+}
+function Event() {
+  return (
+    <div>
+      <h4>오늘의 이벤트</h4>
+      <Outlet></Outlet>
     </div>
   );
 }

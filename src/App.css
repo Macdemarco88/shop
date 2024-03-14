@@ -46,6 +46,8 @@
 }
 .nav-title {
   margin-right: 0 !important;
+  text-decoration: none !important;
+  color: black !important;
 }
 .nav-container {
   margin: 0 20px !important;

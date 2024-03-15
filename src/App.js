@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Navbar, Container, Nav, Row, Col } from "react-bootstrap";
@@ -11,8 +11,6 @@ function App() {
   let [records] = useState(data);
   let navigate = useNavigate();
 
-  let sex = data.filter((d) => d.id >= 1);
-  console.log(sex);
   return (
     <div className="App">
       {/* 네브바 */}

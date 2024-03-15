@@ -1,0 +1,20 @@
+[
+  {
+    "id": 3,
+    "title": "Pink and Black",
+    "content": "only 5 inches",
+    "price": 120000
+  },
+  {
+    "id": 4,
+    "title": "Yellow and Black",
+    "content": "for less than 6",
+    "price": 120000
+  },
+  {
+    "id": 5,
+    "title": "Red Herring",
+    "content": "Born in France",
+    "price": 120000
+  }
+]
